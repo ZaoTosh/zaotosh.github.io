@@ -1,0 +1,150 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  font-size: 10px;
+}
+
+.citySelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 197, 230);
+  white-space: wrap;
+}
+.citySelect_areaTxt,
+.searchCity__area {
+  padding: 5px;
+  margin: 40px;
+  height: 3em;
+  width: 16em;
+  background-color: rgba(43, 52, 54, 0.5);
+}
+
+.searchCity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 197, 230);
+  white-space: wrap;
+}
+.searchCity__area {
+  font-size: 1.2em;
+}
+.container {
+  background-color: rgb(31, 197, 230);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding-bottom: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(11, 189, 239, 0.5);
+  height: 150px;
+  width: 150px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px rgba(104, 122, 128, 0.5);
+}
+
+img {
+  width: 30px;
+}
+
+.Clouds {
+  content: url("./img/lightning-storm_icon-icons.com_54278.png");
+}
+
+@keyframes mist_slidein {
+  0% {
+    content: url("./img/mist_weather_icon_205758.png");
+  }
+  100% {
+    content: url("./img/mist_weather_icon_205757.png");
+  }
+}
+
+.Mist {
+  animation-duration: 1s;
+  animation-name: mist_slidein;
+  animation-iteration-count: infinite;
+}
+
+.Clouds {
+  content: url("./img/clouds-black-storm-weather-symbol_icon-icons.com_64208.png");
+}
+
+.Drizzle {
+  content: url("./img/rain-cloud-black-solid-weather-interface-symbol-with-drops-falling-as-small-lines_icon-icons.com_64244.png");
+}
+
+.Rain {
+  content: url("./img/weather_rain_cloud_icon_131627.png");
+}
+
+.Clear {
+  content: url("./img/weather_forecast_weather_sun_sunny_hot_summer_icon_156091.png");
+}
+
+.Fog {
+  content: url("./img/weather_fog_icon_136028.png");
+}
+
+.Snow {
+  content: url("./img/snow_weather_snowflake_icon_176811.png");
+}
+
+.citta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperatura {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.meteo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+container
+  card
+    citta
+      dataEl cittaEl
+    temperatura
+      tempEl imgEl
+    meteo
+      climaEl */
+
+/* Data citta h4 */
+
+/* temp h2 */
+
+/* clima h3 */
