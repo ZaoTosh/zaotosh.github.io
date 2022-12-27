@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -63,8 +67,21 @@ h5 {
   box-shadow: 0px 0px 10px rgba(104, 122, 128, 0.5);
 }
 
+.cardMax h2 {
+  font-size: 3rem;
+}
+.cardMax h3 {
+  font-size: 2rem;
+}
+.cardMax h4 {
+  font-size: 1.5rem;
+}
+.cardMax h5 {
+  font-size: 13px;
+}
+
 img {
-  width: 30px;
+  width: 50px;
 }
 
 .Clouds {
@@ -84,30 +101,6 @@ img {
   animation-duration: 1s;
   animation-name: mist_slidein;
   animation-iteration-count: infinite;
-}
-
-.Clouds {
-  content: url("./img/clouds-black-storm-weather-symbol_icon-icons.com_64208.png");
-}
-
-.Drizzle {
-  content: url("./img/rain-cloud-black-solid-weather-interface-symbol-with-drops-falling-as-small-lines_icon-icons.com_64244.png");
-}
-
-.Rain {
-  content: url("./img/weather_rain_cloud_icon_131627.png");
-}
-
-.Clear {
-  content: url("./img/weather_forecast_weather_sun_sunny_hot_summer_icon_156091.png");
-}
-
-.Fog {
-  content: url("./img/weather_fog_icon_136028.png");
-}
-
-.Snow {
-  content: url("./img/snow_weather_snowflake_icon_176811.png");
 }
 
 .citta {

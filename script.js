@@ -4,51 +4,61 @@ const citySelect = document.querySelector("#framework");
 const inputEl = document.querySelector(".searchCity__area");
 console.log(citySelect.value);
 
-//genera data odierna.. funzione non utilizzata
-const getDate = () => {
-  const currentDate = new Date();
+//----Genera data odierna.. funzione non utilizzata----
+// const getDate = () => {
+//   const currentDate = new Date();
 
-  const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  };
-  return currentDate.toLocaleDateString("it-IT", options);
-};
+//   const options = {
+//     weekday: "short",
+//     year: "numeric",
+//     month: "short",
+//     day: "numeric",
+//     hour: "numeric",
+//     minute: "numeric",
+//   };
+//   return currentDate.toLocaleDateString("it-IT", options);
+// };
 
-//genera orario corrente
-const getTimeNow = () => {
-  const d = new Date();
-  const options = {
-    hour: "numeric",
-    minute: "numeric",
-  };
-  return d.toLocaleTimeString("it-IT", options);
-};
+//----Genera orario corrente.. funzione non utilizzata----
+// const getTimeNow = () => {
+//   const d = new Date();
+//   const options = {
+//     hour: "numeric",
+//     minute: "numeric",
+//   };
+//   return d.toLocaleTimeString("it-IT", options);
+// };
 //creazione dell card meteo per ogni citta trovata
-const createCard = (data) => {
+/**
+ * @param {Object[]} data - Array Object Weather
+ * @param {boolean} boole - Single card
+ */
+const createCard = (data, boole) => {
   const citta = document.createElement("div");
   const temperatura = document.createElement("div");
   const meteo = document.createElement("div");
   const cardEl = document.createElement("div");
-  cardEl.className = "card";
+  if (!boole) cardEl.className = "card";
+  else cardEl.className = "cardMax";
   citta.className = "citta";
   temperatura.className = "temperatura";
   meteo.className = "meteo";
-
+  // let sunrise = new Date(data.sys.sunrise * 1000).toTimeString();
+  // let sunset = new Date(data.sys.sunset * 1000).toTimeString();
   const dateEl = document.createElement("h5");
-  dateEl.textContent = getTimeNow();
+  dateEl.textContent = new Date(data.dt * 1000).toDateString();
   const cittaEl = document.createElement("h4");
   cittaEl.textContent = data.name;
   const climaEl = document.createElement("h3");
   climaEl.textContent = data.weather[0].main;
   const tempEl = document.createElement("h2");
-  tempEl.textContent = parseInt(data.main.temp - 273.15) + "°C";
+  tempEl.textContent = parseInt(data.main.temp) + "°C";
   const imgEl = document.createElement("img");
-  imgEl.classList = data.weather[0].main;
+  //imgEl.classList = data.weather[0].main;
+  imgEl.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+  );
   //imgEl.setAttribute("alt", ".Clouds");
 
   citta.append(cittaEl, dateEl);
@@ -60,7 +70,7 @@ const createCard = (data) => {
 };
 
 //Funzione fetch singola (unica città)
-const fetchFunction = async (URL) => {
+const fetchFunction = async (URL, boole) => {
   // invio della richiesta al server
   const prom = await fetch(URL, { cache: "no-cache" })
     .then((response) => {
@@ -77,7 +87,7 @@ const fetchFunction = async (URL) => {
     .then((responseJson) => {
       //la città è italiana?
       if (responseJson.sys.country == "IT" || responseJson.name == "Rome")
-        createCard(responseJson);
+        createCard(responseJson, boole);
       else {
         //Preparazione messaggio per città non italiane
         const MsgCityNotAllowed = document.createElement("h2");
@@ -119,9 +129,9 @@ const fetchAllCards = async () => {
   for (const iterator of city) {
     const city_name = iterator;
     const API_key = "8cef55a94a7156f79db10a1047430fcf";
-    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${API_key}`;
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${API_key}&lang=it&units=metric`;
     try {
-      const cardC = fetchFunction(URL);
+      const cardC = fetchFunction(URL, false);
     } catch (error) {
       console.error("Errore Chiamata Fetch: " + error);
     }
@@ -131,8 +141,8 @@ const fetchAllCards = async () => {
 //fetch per ricerca e per selezione
 const fetchOneCard = async (city) => {
   const API_key = "8cef55a94a7156f79db10a1047430fcf";
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`;
-  const cardC = fetchFunction(URL);
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&lang=it&units=metric`;
+  const cardC = fetchFunction(URL, true);
 };
 
 //
