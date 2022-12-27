@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - Pokémon</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Form Section -->
+    <section class="form">
+      <h1>Pokémon</h1>
+      <form name="pokemon" autocomplete="off">
+        <input required type="text" placeholder="Pokemon name" name="name" />
+        <input required type="text" placeholder="Pokemon type" name="type" />
+        <input type="submit" class="btn-submit" value="Save" />
+      </form>
+      <form name="pokemonPatch" autocomplete="off">
+        <input type="text" placeholder="Pokemon id" name="id" />
+        <input type="text" placeholder="Pokemon name" name="name" />
+        <input type="text" placeholder="Pokemon type" name="type" />
+        <input type="submit" value="Modify" />
+      </form>
+
+      <input
+        type="text"
+        placeholder="Cerca il tuo pokemon"
+        name="searchPoke"
+        class="searchPoke"
+      />
+    </section>
+    <!-- End - Form Section -->
+
+    <!-- Form Cards -->
+    <section class="cards">
+      <h2>Lista Pokémon</h2>
+      <ul class="card">
+        <!-- <li class="card__all">
+          <div class="">
+            <div class="card__all__img" alt="image"></div>
+            <p>ID</p>
+            <p>Name</p>
+            <p>Type</p>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+    <!-- End Form Cards -->
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/api.js"></script>
+  </body>
+</html>

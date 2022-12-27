@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somma</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper-oper">
+      <h2>Calcolatrice</h2>
+      <p>Inserire due numeri e seleziona l'operatore</p>
+      <p>Nel caso di campi vuoti darà: -2</p>
+      <p>Nel caso elementi non validi darà: -1</p>
+      <form name="formEl">
+        <input
+          class="primo-num"
+          type="text"
+          name="param1"
+          placeholder="primo numero"
+          required
+        />
+        <input type="radio" id="somma" name="operator" value="+" />
+        <label for="somma">+</label>
+        <br />
+        <input type="radio" id="sottrazione" name="operator" value="-" />
+        <label for="sottrazione">-</label>
+        <br />
+        <input type="radio" id="moltiplicazione" name="operator" value="*" />
+        <label for="moltiplicazione">*</label>
+        <br />
+        <input type="radio" id="divisione" name="operator" value="/" />
+        <label for="divisione">/</label>
+        <br />
+        <input type="radio" id="modulo" name="operator" value="%" />
+        <label for="modulo">%</label>
+        <input
+          class="secondo-num"
+          type="text"
+          name="param2"
+          placeholder="secondo numero"
+          required
+        />
+        <input class="btn-sum" type="submit" value="CALCOLA" name="btnEqual" />
+      </form>
+      <h3></h3>
+    </div>
+    <script type="text/javascript" src="./js/utils.js"></script>
+  </body>
+</html>

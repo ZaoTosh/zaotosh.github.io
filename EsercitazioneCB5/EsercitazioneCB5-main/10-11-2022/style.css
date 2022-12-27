@@ -1,0 +1,57 @@
+:root {
+  --blue: blue;
+  --white: white;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background: rgb(48, 48, 69);
+}
+
+h3 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: rgb(229, 223, 223);
+  border-radius: 5px;
+}
+
+h1,
+p {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  height: 250px;
+  width: 450px;
+  border-radius: 6px;
+  background: rgb(61, 61, 90);
+  box-shadow: 0px 0px 50px rgba(21, 19, 19, 0.5);
+}
+
+.id {
+  color: #71f6a8;
+  font-size: 0.9rem;
+}
+
+.advice {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.divider {
+  width: 250px;
+}
+
+.iconD {
+  background: #71f6a8;
+  align-items: end;
+}
